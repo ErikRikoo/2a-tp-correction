@@ -53,6 +53,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        m_JumpCount = 0;
+        if (IsGround(other.GetContact(0).normal))
+        {
+            m_JumpCount = 0;
+        }
+    }
+
+    private bool IsGround(Vector2 _faceNormal)
+    {
+        return Vector2.Dot(_faceNormal, Vector2.up) > 0;
     }
 }
