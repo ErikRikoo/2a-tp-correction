@@ -1,12 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float m_PlayerSpeed = 1f;
+    [SerializeField] private float m_JumpStrength = 100f;
     
+    private Rigidbody2D m_RigidBody;
+
+    private void Awake()
+    {
+        m_RigidBody = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
+    {
+        Movement();
+        Jump();
+    }
+
+    private void Movement()
     {
         // On récupère l'entrée utilisateur
         // Cela va nous retourner -1 si on appuie sur la flèche de gauche et 1 sur la flèche de droite
@@ -18,5 +35,13 @@ public class PlayerController : MonoBehaviour
         
         // On l'ajoute tout simplement à la position actuelle du joueur
         transform.position += new Vector3(movement, 0f, 0f); 
+    }
+
+    private void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            m_RigidBody.AddForce(Vector3.up * m_JumpStrength);
+        }
     }
 }
