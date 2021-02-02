@@ -2070,6 +2070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerSpeed: 10
   m_JumpStrength: 300
+  m_MaxJumpCount: 2
 --- !u!1 &1882502594
 GameObject:
   m_ObjectHideFlags: 0

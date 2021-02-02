@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float m_PlayerSpeed = 1f;
     [SerializeField] private float m_JumpStrength = 100f;
+    [SerializeField] private int m_MaxJumpCount = 2;
+
+    private int m_JumpCount;
     
     private Rigidbody2D m_RigidBody;
 
@@ -39,9 +42,15 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && m_JumpCount < m_MaxJumpCount)
         {
             m_RigidBody.AddForce(Vector3.up * m_JumpStrength);
+            ++m_JumpCount;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        m_JumpCount = 0;
     }
 }
