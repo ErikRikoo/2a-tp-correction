@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && m_JumpCount < m_MaxJumpCount)
         {
+            // On réinitialise la vitesse du rigidbody afin de s'assurer qu'un saut ait toujours le même comportement
+            m_RigidBody.velocity = Vector2.zero;
             m_RigidBody.AddForce(Vector3.up * m_JumpStrength);
             ++m_JumpCount;
         }
