@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float m_PlayerSpeed = 1f;
-    [SerializeField] private float m_JumpStrength = 100f;
-    [SerializeField] private int m_MaxJumpCount = 2;
+    [SerializeField] private PlayerConfig m_Config;
 
     private int m_JumpCount;
     
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
         
         // On multiplie par la vitesse et surtout par le temps qui s'est écoulé entre deux images (deltaTime)
         // Ainsi on évite d'avoir un mouvement qui dépend du nombre d'images par secondes
-        float movement = movementInput * Time.deltaTime * m_PlayerSpeed;
+        float movement = movementInput * Time.deltaTime * m_Config.PlayerSpeed;
         
         // On l'ajoute tout simplement à la position actuelle du joueur
         transform.position += new Vector3(movement, 0f, 0f); 
@@ -42,11 +41,11 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && m_JumpCount < m_MaxJumpCount)
+        if (Input.GetKeyDown(KeyCode.Space) && m_JumpCount < m_Config.MaxJumpCount)
         {
             // On réinitialise la vitesse du rigidbody afin de s'assurer qu'un saut ait toujours le même comportement
             m_RigidBody.velocity = Vector2.zero;
-            m_RigidBody.AddForce(Vector3.up * m_JumpStrength);
+            m_RigidBody.AddForce(Vector3.up * m_Config.JumpStrength);
             ++m_JumpCount;
         }
     }
