@@ -2,12 +2,9 @@
 
 namespace Player
 {
-    [CreateAssetMenu(fileName = "CharacterConfig", menuName = "Game/Config/Character", order = 0)]
-    public class PlayerConfig : ScriptableObject
+    [CreateAssetMenu(fileName = "JumpConfig", menuName = "Game/Config/Jump", order = 0)]
+    public class JumpConfig : ScriptableObject
     {
-        [SerializeField] private float m_PlayerSpeed = 1f;
-        public float PlayerSpeed => m_PlayerSpeed;
-        
         [SerializeField] private float m_JumpStrength = 100f;
         public float JumpStrength => m_JumpStrength;
         
