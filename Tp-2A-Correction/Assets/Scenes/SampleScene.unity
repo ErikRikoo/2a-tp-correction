@@ -805,8 +805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f58cd5ab7de43be8509bca846c0db38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ObjectToTrigger: {fileID: 1106902382}
-  m_TriggerAction: 0
+  m_ObjectToTrigger: {fileID: 606995012}
+  m_TriggerAction: 1
 --- !u!61 &293340238
 BoxCollider2D:
   m_ObjectHideFlags: 0
