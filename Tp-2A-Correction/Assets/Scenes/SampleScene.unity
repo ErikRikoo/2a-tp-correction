@@ -3117,6 +3117,7 @@ GameObject:
   - component: {fileID: 908761034}
   - component: {fileID: 908761035}
   - component: {fileID: 908761033}
+  - component: {fileID: 908761036}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -3160,6 +3161,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8d4ad2f77b846d295ee0562a2f9e3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &908761036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908761032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d66b3fdb1c245038e8faa4c0ba345c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &921257148
@@ -3972,6 +3985,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1231288432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231288433}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1231288433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231288432}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.598, y: -0.055, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1812193211}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1269666664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5828,6 +5871,7 @@ GameObject:
   - component: {fileID: 1812193212}
   - component: {fileID: 1812193215}
   - component: {fileID: 1812193214}
+  - component: {fileID: 1812193216}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5896,7 +5940,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.0517116, y: -0.87, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 1231288433}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5975,6 +6020,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: {fileID: 11400000, guid: 807752cbd9036344887b863144450349, type: 2}
   m_Input: {fileID: 908761035}
+--- !u!114 &1812193216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812193209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498931384f0649aaa7477e7f4dd77e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WeaponConfig: {fileID: 11400000, guid: dbe60655e5934454db59a8b276c4a213, type: 2}
+  m_Input: {fileID: 908761036}
+  m_BulletSpawningPlace: {fileID: 1231288433}
 --- !u!1 &1822386507
 GameObject:
   m_ObjectHideFlags: 0
