@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 
 namespace Environnement
@@ -9,6 +9,7 @@ namespace Environnement
 
         private void OnTriggerEnter2D(Collider2D other)
         {
+            // Pour le moment on fait juste apparaitre un bouton
             m_ObjectToTrigger.SetActive(true);
         }
     }
