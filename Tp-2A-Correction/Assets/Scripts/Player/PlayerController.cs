@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Player;
+using PlayerInput;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerConfig m_Config;
+
+    [SerializeField] private IInput m_Input;
 
     private int m_JumpCount;
     
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         // On récupère l'entrée utilisateur
         // Cela va nous retourner -1 si on appuie sur la flèche de gauche et 1 sur la flèche de droite
-        float movementInput = Input.GetAxis("Horizontal");
+        float movementInput = m_Input.GetHorizontalAxis();
         
         // On multiplie par la vitesse et surtout par le temps qui s'est écoulé entre deux images (deltaTime)
         // Ainsi on évite d'avoir un mouvement qui dépend du nombre d'images par secondes
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && m_JumpCount < m_Config.MaxJumpCount)
+        if (m_Input.ShouldJump() && m_JumpCount < m_Config.MaxJumpCount)
         {
             // On réinitialise la vitesse du rigidbody afin de s'assurer qu'un saut ait toujours le même comportement
             m_RigidBody.velocity = Vector2.zero;
