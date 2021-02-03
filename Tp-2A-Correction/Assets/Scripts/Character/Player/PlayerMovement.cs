@@ -6,7 +6,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private Speed m_Speed;
-        [SerializeField] private IInput m_Input;
+        [SerializeField] private IMovementInput m_Input;
         
         void Update()
         {

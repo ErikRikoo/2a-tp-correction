@@ -8,7 +8,7 @@ namespace Player
     {
         [SerializeField] private JumpConfig m_Config;
         
-        [SerializeField] private IInput m_Input;
+        [SerializeField] private IJumpInput m_Input;
 
         private int m_JumpCount;
         
