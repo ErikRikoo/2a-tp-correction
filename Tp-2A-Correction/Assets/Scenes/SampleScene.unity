@@ -641,9 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f58cd5ab7de43be8509bca846c0db38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ObjectToTrigger: {fileID: 906464306}
-  m_TriggerAction: 2
-  m_TopMovementOffset: 2
+  m_ObjectToTrigger: {fileID: 906464309}
 --- !u!61 &170997147
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1338,9 +1336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f58cd5ab7de43be8509bca846c0db38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ObjectToTrigger: {fileID: 606995012}
-  m_TriggerAction: 1
-  m_TopMovementOffset: 2
+  m_ObjectToTrigger: {fileID: 606995015}
 --- !u!61 &293340238
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2011,6 +2007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 606995013}
   - component: {fileID: 606995014}
+  - component: {fileID: 606995015}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Untagged
@@ -2062,6 +2059,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2688284, y: 4.8830767}
   m_EdgeRadius: 0
+--- !u!114 &606995015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606995012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5324632bd6b64c0aad3332570df0e14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnTriggerActiveState: 0
 --- !u!1 &649828679
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,6 +3040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906464308}
   - component: {fileID: 906464307}
+  - component: {fileID: 906464309}
   m_Layer: 0
   m_Name: Obstacle (1)
   m_TagString: Untagged
@@ -3081,6 +3092,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906464309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906464306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ba92bec5c04c87811ab42be4000363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AxisMovement: {x: 0, y: 1, z: 0}
+  m_MovementMagnitude: 2
 --- !u!1 &908761032
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1106902384}
   - component: {fileID: 1106902383}
+  - component: {fileID: 1106902385}
   m_Layer: 0
   m_Name: PoppingPlatform
   m_TagString: Untagged
@@ -3688,6 +3714,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1106902385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106902382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5324632bd6b64c0aad3332570df0e14b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnTriggerActiveState: 1
 --- !u!1 &1139803930
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,9 +6661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f58cd5ab7de43be8509bca846c0db38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ObjectToTrigger: {fileID: 1106902382}
-  m_TriggerAction: 0
-  m_TopMovementOffset: 2
+  m_ObjectToTrigger: {fileID: 1106902385}
 --- !u!1 &2042471990
 GameObject:
   m_ObjectHideFlags: 0
