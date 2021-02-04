@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8905104811010715673}
   - component: {fileID: 8905104811010715672}
   - component: {fileID: 1249137537166733926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PineappleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
