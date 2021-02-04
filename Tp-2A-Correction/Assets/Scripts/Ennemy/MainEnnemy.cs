@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Ennemy
 {
+    // Inutilisé pour le moment
     public class MainEnnemy : MonoBehaviour
     {
         [SerializeField] private MainPlayerVariable m_MainPlayerVariable;
