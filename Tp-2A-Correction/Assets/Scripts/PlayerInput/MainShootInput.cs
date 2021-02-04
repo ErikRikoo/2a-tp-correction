@@ -6,7 +6,7 @@ namespace PlayerInput
     {
         public override bool ShouldShoot()
         {
-            return Input.GetKeyDown(KeyCode.Mouse0);
+            return Input.GetKeyDown(KeyCode.C);
         }
     }
 }

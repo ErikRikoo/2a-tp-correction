@@ -1,4 +1,5 @@
-﻿using PlayerInput;
+﻿using System;
+using PlayerInput;
 using UnityEngine;
 
 namespace Player
@@ -18,13 +19,19 @@ namespace Player
             // On récupère l'entrée utilisateur
             // Cela va nous retourner -1 si on appuie sur la flèche de gauche et 1 sur la flèche de droite
             float movementInput = m_Input.GetHorizontalAxis();
+            
         
             // On multiplie par la vitesse et surtout par le temps qui s'est écoulé entre deux images (deltaTime)
             // Ainsi on évite d'avoir un mouvement qui dépend du nombre d'images par secondes
             float movement = movementInput * Time.deltaTime * m_Speed.Value;
         
             // On l'ajoute tout simplement à la position actuelle du joueur
-            transform.position += new Vector3(movement, 0f, 0f); 
+            transform.position += new Vector3(movement, 0f, 0f);
+            if (movementInput != 0)
+            {
+                float newYRotation = movementInput > 0? 0f : -180f;
+                transform.rotation = Quaternion.Euler(0f, newYRotation, 0f);
+            }
         }
     }
 }
